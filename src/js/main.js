@@ -34,8 +34,10 @@ function initParallaxMouseMove() {
         animate();
     });
 }
-initParallaxMouseMove();
 
+/* -------------------------------------------------------------------------- */
+/*                              startAnimations;                              */
+/* -------------------------------------------------------------------------- */
 function startAnimations() {
     const tlh = gsap.timeline({
         defaults: { duration: 0.6, ease: 'power2.out' },
@@ -60,7 +62,9 @@ function startAnimations() {
     tlContnt.from('.main-section__coins', { opacity: 0 }, '-=0.5');
 }
 
-startAnimations();
+/* -------------------------------------------------------------------------- */
+/*                              scrollAnimations                              */
+/* -------------------------------------------------------------------------- */
 
 function scrollAnimations() {
     gsap.registerPlugin(ScrollTrigger);
@@ -95,4 +99,13 @@ function scrollAnimations() {
     });
 }
 
-scrollAnimations();
+window.addEventListener('load', () => {
+    gsap.to('.loader', {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: () => (loader.style.display = 'none'),
+    });
+    initParallaxMouseMove();
+    startAnimations();
+    scrollAnimations();
+});

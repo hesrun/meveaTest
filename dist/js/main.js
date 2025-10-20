@@ -33,8 +33,12 @@ function initParallaxMouseMove() {
     animate();
   });
 }
+/* -------------------------------------------------------------------------- */
 
-initParallaxMouseMove();
+/*                              startAnimations;                              */
+
+/* -------------------------------------------------------------------------- */
+
 
 function startAnimations() {
   var tlh = gsap.timeline({
@@ -94,8 +98,12 @@ function startAnimations() {
     opacity: 0
   }, '-=0.5');
 }
+/* -------------------------------------------------------------------------- */
 
-startAnimations();
+/*                              scrollAnimations                              */
+
+/* -------------------------------------------------------------------------- */
+
 
 function scrollAnimations() {
   gsap.registerPlugin(ScrollTrigger);
@@ -127,4 +135,15 @@ function scrollAnimations() {
   });
 }
 
-scrollAnimations();
+window.addEventListener('load', function () {
+  gsap.to('.loader', {
+    opacity: 0,
+    duration: 0.5,
+    onComplete: function onComplete() {
+      return loader.style.display = 'none';
+    }
+  });
+  initParallaxMouseMove();
+  startAnimations();
+  scrollAnimations();
+});

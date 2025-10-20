@@ -212,6 +212,39 @@ body {
   overflow: auto;
 }
 
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #eac666;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body {
+  scrollbar-face-color: #eac666;
+  scrollbar-track-color: black;
+}
+
+.loader {
+  background: #0a0a0a;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
+.loader__aligner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h1,
 h2,
 h3 {
