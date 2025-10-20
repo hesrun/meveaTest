@@ -100,6 +100,7 @@ function scrollAnimations() {
 }
 
 window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
     gsap.to('.loader', {
         opacity: 0,
         duration: 0.5,
