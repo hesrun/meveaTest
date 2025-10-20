@@ -1,0 +1,66 @@
+.link {
+    display: inline-flex;
+    align-items: center;
+    color: $gold;
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    font-weight: 600;
+    &_underline {
+        text-decoration: underline;
+    }
+    @include hover {
+        color: white;
+    }
+}
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9375rem;
+    padding: 0 2rem;
+    height: 3rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    &_gradient {
+        color: black;
+        background: linear-gradient(225deg, $gradient-start, $gradient-end);
+        @include hover {
+            background: linear-gradient(45deg, $gradient-start, $gradient-end);
+        }
+    }
+    &_clear {
+        color: $gold;
+        @include hover {
+            color: white;
+        }
+    }
+}
+
+.dropdown {
+    font-size: 0.875rem;
+    border: 1px rgba(white, 0.3) solid;
+    border-radius: 20px;
+    @include hover {
+        border-color: $gold;
+        color: $gold;
+    }
+    &__btn {
+        width: 100%;
+        padding: 0.625rem 1rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        font-weight: 600;
+        &:after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-bottom: 1px $gold solid;
+            border-right: 1px $gold solid;
+            rotate: 45deg;
+            pointer-events: none;
+        }
+    }
+}
